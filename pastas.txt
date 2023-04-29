@@ -1,0 +1,19 @@
+Pasta A
+    Pasta 1
+    Pasta 2
+Pasta B
+    Pasta 3
+        Pasta 4
+        Pasta 5
+            Pasta 6
+            Pasta 7
+            Pasta 8
+                Pasta 9
+                    Pasta 10
+                        Pasta 11
+        Pasta 12
+            Pasta 13
+            Pasta 14
+        Pasta 15
+Pasta C
+    Pasta ÁCÊNTÕ
