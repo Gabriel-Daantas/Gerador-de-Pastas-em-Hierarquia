@@ -77,7 +77,7 @@ class Pasta:
         raiz.criar_pasta('.')
 
 
-    def main(self):
+    def inicio(self):
         clear()
         caminho_arquivo = input('Digite o caminho do arquivo de texto: ')
         raiz = Pasta(self.nome)
@@ -85,11 +85,19 @@ class Pasta:
         if not os.path.isfile(caminho_arquivo):
             clear()
             input(f'O caminho de arquivo "{caminho_arquivo}" não existe.\nPressione qualquer tecla para continuar.')
-            raiz.main()
+            raiz.inicio()
     
         raiz.criar_hierarquia_pastas(caminho_arquivo, raiz)
     
         print('Hierarquia de pastas criada com sucesso!\n')
+    
+
+    def main():
+        clear()
+        nome_pasta = input('Qual o nome da pasta Pai?\n')
+    
+        pastas = Pasta(str(nome_pasta))
+        pastas.inicio()
 
 
     def __str__(self):
