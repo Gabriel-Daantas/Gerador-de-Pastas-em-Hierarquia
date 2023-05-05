@@ -4,6 +4,6 @@ from Pasta import Pasta
 
 if __name__ == '__main__':
     
-    pastas = Pasta('Pastas Unicv')
+    pasta = Pasta('Unicv')
 
-    pastas.main()
+    pasta.main()

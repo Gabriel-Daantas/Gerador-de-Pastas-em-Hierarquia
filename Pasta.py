@@ -1,17 +1,22 @@
 import os
+from tela_arquivo import TelaArquivo
+from tela_pasta_raiz import TelaPastaRaiz
 
 clear = lambda: os.system('cls')
 
 class Pasta:
     def __init__(self, nome):
-        self.nome = nome
         self.filhos = []
+        self.nome = nome
+        self.tela_arquivo = TelaArquivo()
+        # self.tela_pasta_raiz = TelaPastaRaiz()
 
 
     def adicionar_filho(self, filho):
         self.filhos.append(filho)
 
 
+    # 
     def criar_pasta(self, caminho):
         caminho_pasta = os.path.join(caminho, self.nome)
         if not os.path.exists(caminho_pasta):
@@ -79,13 +84,9 @@ class Pasta:
 
     def main(self):
         clear()
-        caminho_arquivo = input('Digite o caminho do arquivo de texto: ')
+        caminho_arquivo = self.tela_arquivo.verificar_arquivo()
+
         raiz = Pasta(self.nome)
-    
-        if not os.path.isfile(caminho_arquivo):
-            clear()
-            input(f'O caminho de arquivo "{caminho_arquivo}" não existe.\nPressione qualquer tecla para continuar.')
-            raiz.main()
     
         raiz.criar_hierarquia_pastas(caminho_arquivo, raiz)
     
